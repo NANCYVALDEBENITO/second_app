@@ -1,0 +1,29 @@
+
+<h1>Pages#landing</h1>
+<p>Find me in app/views/pages/landing.html.erb</p>
+
+
+
+  
+<table class="table-light">
+	<thead>
+		<th>Name</th>
+		<th>Email</th>
+		<th colspan="2"></th>
+	</thead>
+	<tbody>
+		<% @students.each do |student|%>
+		<tr>
+			<td><%= student.name %></td>
+			<td><%= student.email %></td>
+			<td class="btn btn-secondary"><%= link_to 'Show', student %></td>
+	        <td class="btn btn-success"><%= link_to 'Edit', edit_student_path(student) %></td>
+	        <td class="btn btn-warning"><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+
+
+		<% end %>
+	</tbody>
+	
+
+</table>
